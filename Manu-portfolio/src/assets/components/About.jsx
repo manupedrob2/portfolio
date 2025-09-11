@@ -32,7 +32,7 @@ Este proyecto me permitió fortalecer habilidades tanto técnicas como de trabaj
         { src: "scrum.png", alt: "Scrum" },
         { src: "git.png", alt: "Git" },
       ],
-      link: "https://alquilando.onrender.com/"
+      link: "https://github.com/ManuelPedrobelli/alquilando"
     },
     {
       title: "Trivia",
@@ -51,80 +51,9 @@ Este proyecto me permitió fortalecer habilidades tanto técnicas como de trabaj
   ];
 
   return (
-    <section id="about" className="mb-16 mt-12 mx-auto flex flex-col items-center px-4 lg:px-6 gap-14 w-full max-w-6xl text-white">
-      {/* Educación */}
-      <div className="w-full">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-lg">
-          Educación
-        </h2>
-
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-1">
-          <a href="https://www.info.unlp.edu.ar/analista-en-tic/" target="_blank" rel="noopener noreferrer" className="block mb-4">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2 hover:text-blue-400 transition-colors duration-1">
-              Analista en Tecnologías de la Información y la Comunicación
-            </h3>
-          </a>
-
-          <p className="text-base md:text-lg font-medium">
-            <strong>Universidad Nacional de La Plata – Facultad de Informática</strong>
-          </p>
-          <p className="text-base md:text-lg mb-4">Estado: Finalizando el tercer y último año</p>
-
-          <ul className="list-disc list-inside grid gap-2 text-base md:text-lg">
-            <li>Programación orientada a objetos</li>
-            <li>Ingeniería de software: historias de usuario, documentación, testing, buenas prácticas</li>
-            <li>Metodologías ágiles</li>
-            <li>Bases de datos relacionales: SQL, modelado lógico y físico, normalización</li>
-            <li>Sistemas operativos</li>
-            <li>Desarrollo de software</li>
-          </ul>
-
-          <p className="mt-4 text-base md:text-lg font-medium">
-            <strong>Reconocimiento:</strong> Becario del programa de estímulo al rendimiento académico
-          </p>
-
-          <button
-            className="mt-4 py-2 px-6 rounded-xl font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-lg hover:scale-105 hover:from-pink-500 hover:to-blue-500 transition-all duration-1"
-            onClick={toggleVisibility}
-          >
-            {isVisible ? "Ocultar historia académica" : "📄 Ver historia académica"}
-          </button>
-
-          {isVisible && (
-            <div className="flex justify-center w-full mt-6">
-              <a href="/historiaacademica.png" target="_blank" rel="noopener noreferrer" className="block">
-                <img
-                  src="historiaacademica.png"
-                  alt="Historia Académica"
-                  className="w-full max-w-md rounded-2xl shadow-2xl border border-gray-600 cursor-pointer transition-transform "
-                />
-              </a>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Habilidades Técnicas */}
-      <section id="habilidades" className="w-full mt-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 drop-shadow-lg">
-          Habilidades Técnicas
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {habilidades.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white/10 backdrop-blur-lg border border-white/20 p-5 rounded-3xl shadow-md hover:shadow-xl transition-all duration-1 hover:scale-[1.02]"
-            >
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-base md:text-lg">{item.content}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Portfolio */}
-      <div id="portfolio" className="w-full mt-12 flex flex-col items-center gap-12">
+    <section id="about" className="mb-2 mt-2 mx-auto flex flex-col items-center px-4 lg:px-6 gap-14 w-full max-w-6xl text-white">
+            {/* Portfolio */}
+      <div id="portfolio" className="w-full mt-4 flex flex-col items-center gap-6">
         <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-xl mb-8">
           Proyectos
         </h2>
@@ -164,6 +93,80 @@ Este proyecto me permitió fortalecer habilidades tanto técnicas como de trabaj
           </div>
         ))}
       </div>
+      
+      {/* Habilidades Técnicas */}
+      <section id="habilidades" className="w-full ">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 drop-shadow-lg">
+          Habilidades Técnicas
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {habilidades.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white/10 backdrop-blur-lg border border-white/20 p-5 rounded-3xl shadow-md hover:shadow-xl transition-all duration-1 hover:scale-[1.02]"
+            >
+              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base md:text-lg">{item.content}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Educación */}
+      <div className="w-full mt-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-lg">
+          Educación
+        </h2>
+
+        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-1">
+          <a href="https://www.info.unlp.edu.ar/analista-en-tic/" target="_blank" rel="noopener noreferrer" className="block mb-4">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-2 hover:text-blue-400 transition-colors duration-1">
+              Analista en Tecnologías de la Información y la Comunicación
+            </h3>
+          </a>
+
+          <p className="text-base md:text-lg font-medium">
+            <strong>Universidad Nacional de La Plata – Facultad de Informática</strong>
+          </p>
+          <p className="text-base md:text-lg mb-4">Estado: Finalizando el tercer y último año</p>
+
+          <ul className="list-disc list-inside grid gap-2 text-base md:text-lg">
+            <li>Arquitectura de software</li>
+            <li>Patrones de Diseño</li>
+            <li>Metodologías ágiles</li>
+            <li>Ingeniería de software: historias de usuario, documentación, testing, buenas prácticas</li>
+            <li>Bases de datos relacionales: SQL, modelado lógico y físico, normalización</li>
+            <li>Sistemas operativos</li>
+            <li>Programación orientada a objetos</li>
+          </ul>
+
+          <p className="mt-4 text-base md:text-lg font-medium">
+            <strong>Reconocimiento:</strong> Becario del programa de estímulo al rendimiento académico
+          </p>
+
+          <button
+            className="mt-4 py-2 px-6 rounded-xl font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-lg hover:scale-105 hover:from-pink-500 hover:to-blue-500 transition-all duration-1"
+            onClick={toggleVisibility}
+          >
+            {isVisible ? "Ocultar historia académica" : "📄 Ver historia académica"}
+          </button>
+
+          {isVisible && (
+            <div className="flex justify-center w-full mt-6">
+              <a href="/historiaacademica.png" target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src="historiaacademica.png"
+                  alt="Historia Académica"
+                  className="w-full max-w-md rounded-2xl shadow-2xl border border-gray-600 cursor-pointer transition-transform "
+                />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+      </section>
+
+
     </section>
   );
 }

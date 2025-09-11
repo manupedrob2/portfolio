@@ -2,7 +2,8 @@
     "hero": {
       "title": "Manuel Pedrobelli",
       "subtitle": "Desarrollador de software",
-      "cv": "CV"
+      "cv": "CV",
+      "about": "Estudiante avanzado de Analista en Tecnologías de la Información y la Comunicación en la UNLP , con experiencia en proyectos colaborativos y un enfoque en soluciones de desarrollo web.\n Me especializo en el desarrollo full-stack y aplico buenas prácticas dedesarrollo, control de versiones(Git) y metodologías ágiles.\nMi objetivo es aportar valor a través del trabajo en equipo y el aprendizaje constante."
     },
     "about": {
       "text1": "Actualmente estoy cursando el último año de la carrera Analista en Tecnologías de la Información y la Comunicación en la UNLP (Facultad de Informática).\n\nA medida que avanzo en mis estudios universitarios, me enfoco en el desarrollo web full-stack.\n\n Estoy buscando incorporarme a un equipo de desarrollo como programador, donde pueda aportar valor a partir de mi formación académica y continuar desarrollándome profesionalmente.",

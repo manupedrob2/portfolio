@@ -1,24 +1,31 @@
-import React from 'react';
-import 'animate.css/animate.min.css';
-import enFlag from '/usaflag.svg'; // Ruta relativa desde Header.jsx
-import esFlag from '/flagSpain.svg'; // Ruta relativa desde Header.jsx
+import React from "react";
 
-const Header = ({ language, toggleLanguage }) => {
+const Navbar = () => {
   return (
-    <div id='home' className='sticky top-0 left-0 right-0 bg-black z-50'>
-      <div className='flex justify-center w-full text-white'>
-        <div className='flex'>
-          {/* Utiliza la variable de idioma para mostrar la bandera correspondiente */}
-          <img
-            src={language === 'en' ? esFlag : enFlag} // Cambia el orden de las banderas según el idioma
-            alt='Language flag'
-            className='w-10 h-10 md:w-12 md:h-12 lg:w-10 lg:h-10 p-2 rounded-full cursor-pointer' // Ajusta el tamaño en diferentes tamaños de pantalla
-            onClick={toggleLanguage} // Llama a la función para cambiar el idioma
-          />
-        </div>
-      </div>
-    </div>
+    <nav className="flex items-center justify-between bg-gray-800 px-6 py-3">
+      {/* Logo */}
+      <div className="text-white text-xl font-bold">MP</div>
+
+      {/* Links */}
+      <ul className="flex space-x-6">
+        <li>
+          <a href="#" className="text-gray-300 hover:text-white transition">
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="#" className="text-gray-300 hover:text-white transition">
+            Servicios
+          </a>
+        </li>
+        <li>
+          <a href="#" className="text-gray-300 hover:text-white transition">
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

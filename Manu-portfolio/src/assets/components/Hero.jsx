@@ -24,7 +24,7 @@ export default function HeroComponent({ text }) {
 
           {/* Botones */}
           <div className="flex flex-wrap gap-3 justify-center items-center md:justify-center mt-6">
-            <a href="manuelPedrobelli_cv.pdf" download>
+            <a href="ManuelPedrobelli_CV.pdf" download>
               <button className="px-6 py-3  bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold shadow-md transition-transform hover:scale-105 border-white">
                 {text.cv}
               </button>
