@@ -23,7 +23,7 @@ function App() {
       <Header language={language} toggleLanguage={toggleLanguage} />
       <Hero text={texts.hero} />
       <About text={texts.about} />
-      <Contact text={texts.contact} />
+      <Contact text={texts.contact}/>
     </>
   );
 }

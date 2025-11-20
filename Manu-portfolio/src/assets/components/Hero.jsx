@@ -1,41 +1,47 @@
-// HeroComponent.jsx
-export default function HeroComponent({ text }) {
+export default function HeroComponent() {
   return (
-    <div className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('fondo1.jpg')" }}>
+    <div
+      className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4"
+      style={{ backgroundImage: "url('fondo1.jpg')" }}
+    >
       {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50 "></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/60"></div>
 
       {/* Contenedor principal */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 items-center justify-center bg-white/10 backdrop-blur-lg rounded-2xl p-10 w-3/4 shadow-xl mx-4">
+      <div className="relative w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-10 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
         
         {/* Columna izquierda: texto */}
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white animate-fadeIn">
-            {text.title}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white animate-fadeIn leading-tight">
+            Manuel Pedrobelli
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mt-3 animate-fadeIn delay-200">
-            {text.subtitle}
+
+          <p className="text-xl sm:text-2xl text-gray-200 mt-2 animate-fadeIn delay-200">
+            Desarrollador Full Stack.
           </p>
-          <p className="text-sm md:text-base lg:text-lg text-gray-300 mt-4 whitespace-pre-line animate-fadeIn delay-400">
-            {
-             text.about 
-            }
+
+          <p className="text-base sm:text-lg text-gray-300 mt-4 animate-fadeIn delay-300 leading-relaxed">
+            Estudiante avanzado de Analista en TIC – UNLP.  <br />
+            Desarrollo aplicaciones web.
           </p>
 
           {/* Botones */}
-          <div className="flex flex-wrap gap-3 justify-center items-center md:justify-center mt-6">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-6 animate-fadeIn delay-500">
+            
             <a href="ManuelPedrobelli_CV.pdf" download>
-              <button className="px-6 py-3  bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold shadow-md transition-transform hover:scale-105 border-white">
-                {text.cv}
+              <button className="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-xl font-semibold shadow-md transition-transform hover:scale-[1.04] active:scale-95">
+                Descargar CV
               </button>
             </a>
-            <a href="https://www.linkedin.com/in/manuel-pedrobelli-897009213/">
-              <button className="px-6 py-3 border border-white text-white rounded-lg font-bold shadow-md hover:bg-white/10 transition-transform hover:scale-105 bg-blue-700">
+
+            <a href="https://www.linkedin.com/in/manupedrob/">
+              <button className="px-6 py-3 bg-blue-700 hover:bg-blue-600 text-white rounded-xl font-semibold shadow-md transition-transform hover:scale-[1.04] active:scale-95">
                 LinkedIn
               </button>
             </a>
-            <a href="https://github.com/ManuelPedrobelli">
-              <button className="px-6 py-3 border border-white text-white rounded-lg font-bold shadow-md hover:bg-white/10 transition-transform hover:scale-105 bg-black">
+
+            <a href="https://github.com/manupedrob2">
+              <button className="px-6 py-3 bg-black hover:bg-black/80 text-white rounded-xl font-semibold shadow-md transition-transform hover:scale-[1.04] active:scale-95">
                 GitHub
               </button>
             </a>
@@ -45,9 +51,9 @@ export default function HeroComponent({ text }) {
         {/* Columna derecha: foto */}
         <div className="flex justify-center">
           <img
-            src="perfil.jpg"
-            alt="software engineer"
-            className="rounded-full w-40 h-40 md:w-80 md:h-80 object-cover shadow-lg hover:scale-105 transition-transform duration-300"
+            src="asd123.jpg"
+            alt="perfil"
+            className="rounded-full w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 object-cover shadow-lg ring-4 ring-white/20 hover:scale-105 transition-transform duration-300"
           />
         </div>
       </div>
