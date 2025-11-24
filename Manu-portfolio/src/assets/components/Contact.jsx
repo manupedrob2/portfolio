@@ -1,112 +1,152 @@
 import React from "react";
 
-export default function Contact({ text }) { // ¡CORREGIDO! Asegurando que text se recibe como prop
-    
-    // Datos estáticos del formulario de contacto
+export default function Contact({ text }) { 
+    // Fallback por si 'text' viene undefined
+    const content = text || { 
+        text: "Contáctame", 
+        name: "Nombre", 
+        email: "Email", 
+        comment: "Mensaje", 
+        send: "Enviar Mensaje" 
+    };
+
     const contactData = {
         submitUrl: "https://formsubmit.co/manupedrob@gmail.com",
         hiddenFields: [
-            { name: "_next", value: "https://manupedrobcv.onrender.com/" }, // URL a donde redirigir después del envío
-            { name: "_captcha", value: "false" }, // Desactivar la verificación de captcha
+            { name: "_next", value: "https://manupedrobcv.onrender.com/" }, 
+            { name: "_captcha", value: "false" },
         ],
         formInputs: [
             {
-                labelKey: "name", // Clave para obtener el texto de 'text' (JSON)
+                labelKey: "name",
                 id: "name",
                 type: "text",
                 name: "name",
-                placeholder: "Tu nombre", // Placeholder hardcodeado
+                placeholder: "Ej: Juan Pérez",
+                icon: (
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                )
             },
             {
-                label: "E-mail", // Etiqueta directamente hardcodeada
+                labelKey: "email",
+                labelFallback: "Email",
                 id: "email",
                 type: "email",
                 name: "email",
-                placeholder: "tu@email.com", // Placeholder hardcodeado
+                placeholder: "tu@email.com",
+                icon: (
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                )
             },
-            // El campo de comentarios es un textarea, lo manejo aparte para simplificar
         ],
         commentArea: {
-            labelKey: "comment", // Clave para obtener el texto de 'text' (JSON)
+            labelKey: "comment",
             id: "comments",
             name: "comments",
-            placeholder: "Escribe tu mensaje...", // Placeholder hardcodeado
+            placeholder: "¿En qué puedo ayudarte?",
         }
     };
 
     return (
-        <div
-            id="contact"
-            className="mt-12 mb-16 px-4 md:px-6 w-full max-w-6xl mx-auto text-center"
-        >
-            <h2 className="text-3xl md:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-xl mb-8">
-                {text.text}
-            </h2>
+        <section id="contacto" className="py-20 px-4 md:px-6 w-full max-w-6xl mx-auto">
+            
+            {/* Cabecera: Título en Honeydew (#f1faee) */}
+            <div className="text-center mb-12 space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#f1faee] tracking-tight">
+                    {content.text}
+                </h2>
+                <p className="text-[#a8dadc] text-lg">
+                    ¿Tienes una propuesta o proyecto en mente? Hablemos.
+                </p>
+            </div>
 
-            <form
-                className="bg-white/10 backdrop-blur-xl p-6 md:p-8 rounded-2xl shadow-2xl 
-                            text-white text-base md:text-lg flex flex-col gap-6 border border-white/20"
-                action={contactData.submitUrl}
-                method="POST"
-            >
-                
-                {/* Campos de Nombre y Email generados dinámicamente */}
-                {contactData.formInputs.map((inputProps, idx) => (
-                    <div key={idx} className="flex flex-col text-left">
-                        <label htmlFor={inputProps.id} className="font-semibold mb-1">
-                            {/* Usa text para las etiquetas dinámicas */}
-                            {inputProps.label || text[inputProps.labelKey]}
+            <div className="relative">
+                {/* Decoración de fondo (Glow): De Strawberry Red a Steel Blue */}
+               
+
+                <form
+                    // Fondo Glassmorphism sobre Deep Space Blue
+                    className="relative bg-[#1d3557]/50 backdrop-blur-xl border border-[#a8dadc]/10 p-8 md:p-10 rounded-2xl shadow-2xl flex flex-col gap-6"
+                    action={contactData.submitUrl}
+                    method="POST"
+                >
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {contactData.formInputs.map((inputProps, idx) => (
+                            <div key={idx} className="flex flex-col text-left group">
+                                {/* Label: Por defecto Frosted Blue, al enfocar cambia a Strawberry Red */}
+                                <label htmlFor={inputProps.id} className="text-sm font-semibold text-[#a8dadc] mb-2 ml-1 group-focus-within:text-[#e63946] transition-colors">
+                                    {content[inputProps.labelKey] || inputProps.labelFallback}
+                                </label>
+                                
+                                <div className="relative">
+                                    {/* Icono */}
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500 group-focus-within:text-[#e63946] transition-colors">
+                                        {inputProps.icon}
+                                    </div>
+
+                                    <input
+                                        id={inputProps.id}
+                                        name={inputProps.name}
+                                        type={inputProps.type}
+                                        required
+                                        placeholder={inputProps.placeholder}
+                                        // Input Styles: Borde rojo al enfocar
+                                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-[#a8dadc]/20 text-[#f1faee] placeholder-gray-500 
+                                                   focus:outline-none focus:border-[#e63946] focus:ring-1 focus:ring-[#e63946] 
+                                                   transition-all duration-300 hover:bg-white/10"
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Área de Texto */}
+                    <div className="flex flex-col text-left group">
+                        <label htmlFor={contactData.commentArea.id} className="text-sm font-semibold text-[#a8dadc] mb-2 ml-1 group-focus-within:text-[#e63946] transition-colors">
+                            {content[contactData.commentArea.labelKey]}
                         </label>
-                        <input
-                            id={inputProps.id}
-                            name={inputProps.name}
-                            type={inputProps.type}
+                        <textarea
+                            id={contactData.commentArea.id}
+                            name={contactData.commentArea.name}
+                            rows="5"
                             required
-                            placeholder={inputProps.placeholder}
-                            className="p-3 rounded-lg bg-white text-black border border-gray-300 
-                                     focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                            placeholder={contactData.commentArea.placeholder}
+                            className="w-full p-4 rounded-xl bg-white/5 border border-[#a8dadc]/20 text-[#f1faee] placeholder-gray-500 resize-none
+                                       focus:outline-none focus:border-[#e63946] focus:ring-1 focus:ring-[#e63946] 
+                                       transition-all duration-300 hover:bg-white/10"
                         />
                     </div>
-                ))}
 
-                {/* Comentarios / Mensaje */}
-                <div className="flex flex-col text-left">
-                    <label htmlFor={contactData.commentArea.id} className="font-semibold mb-1">
-                        {/* Usa text para la etiqueta de Comentario */}
-                        {text[contactData.commentArea.labelKey]}
-                    </label>
-                    <textarea
-                        id={contactData.commentArea.id}
-                        name={contactData.commentArea.name}
-                        rows="5"
-                        placeholder={contactData.commentArea.placeholder}
-                        className="p-3 rounded-lg bg-white text-black border border-gray-300 resize-none
-                                     focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-                    />
-                </div>
-
-                {/* Botón centrado */}
-                <div className="flex justify-center w-full">
-                    <input
+                    {/* Botón de envío: Strawberry Red (#e63946) */}
+                    <button
                         type="submit"
-                        // Usa text para el valor del botón
-                        value={text.send}
-                        className="mt-2 py-3 px-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
-                                 hover:scale-105 hover:brightness-110 transition-all duration-300
-                                 text-white font-semibold rounded-xl shadow-lg cursor-pointer"
-                    />
-                </div>
+                        className="mt-4 w-full md:w-auto md:self-end px-8 py-3.5 bg-[#e63946] hover:bg-[#d62839] 
+                                   text-[#f1faee] font-bold rounded-xl shadow-lg shadow-[#e63946]/20
+                                   transform hover:translate-y-[-2px] transition-all duration-300 flex items-center justify-center gap-2 group"
+                    >
+                        <span>{content.send}</span>
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
 
-                {/* Hidden fields generados dinámicamente */}
-                {contactData.hiddenFields.map((field, idx) => (
-                    <input 
-                        key={idx} 
-                        type="hidden" 
-                        name={field.name} 
-                        value={field.value} 
-                    />
-                ))}
-            </form>
-        </div>
+                    {/* Hidden fields */}
+                    {contactData.hiddenFields.map((field, idx) => (
+                        <input 
+                            key={idx} 
+                            type="hidden" 
+                            name={field.name} 
+                            value={field.value} 
+                        />
+                    ))}
+                </form>
+
+            </div>
+        </section>
     );
 }

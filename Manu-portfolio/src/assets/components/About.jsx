@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 
-export default function About({ text }) {
+export default function About() {
   const [isVisible, setIsVisible] = useState(false);
-
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  // --- ARREGLOS DE DATOS ---
+  // --- DATOS ---
 
   const habilidades = [
-    { title: "Lenguajes", content: "Javascript, Java, SQL, C#" },
+    { title: "Lenguajes", content: "C#, JavaScript, Java, SQL" },
     {
-      title: "Frameworks / Librerías",
-      content: "React, Node.js, Express, Blazor (.NET), TailwindCSS, Bootstrap",
+      title: "Frameworks & Libs",
+      content: "React, .NET (Blazor/Core), Node.js, Express, TailwindCSS",
     },
-    { title: "Bases de datos", content: "SQLite, diseño y consultas SQL" },
-    { title: "Herramientas", content: "Git, GitHub, Linux" },
+    { title: "Base de Datos", content: "PostgreSQL, SQLite, SQL Server" },
+    { title: "Herramientas", content: "Git, GitHub, Postman, Linux" },
     {
       title: "Idiomas",
-      content: "Inglés técnico (lectura y comprensión de documentación)",
+      content: "Inglés Técnico (Lectura fluida de documentación)",
     },
   ];
 
@@ -25,260 +24,271 @@ export default function About({ text }) {
     {
       title: "Alquilando",
       img: "imagenAlquilando.jpg",
-      description: `Alquilando es una aplicación web para la gestión de propiedades en alquiler, que permite a los usuarios publicar inmuebles, realizar reservas y llevar un seguimiento de las operaciones de forma centralizada.\n
-En el proyecto participé de forma activa en todo el ciclo de vida del desarrollo, desde la recolección de requisitos hasta la implementación de funcionalidades.\n
-Realicé entrevistas a usuarios reales para comprender sus necesidades, redacté la documentación inicial (SRS, épicas e historias de usuario) y trabajé bajo la metodología Scrum, participando en sprints, retrospectivas y tareas de equipo.\n
-Apliqué buenas prácticas de desarrollo como patron MVC, principios SOLID, inyección de dependencias y control de versiones con Git.\n
-Desarrollé funcionalidades clave del sistema utilizando Blazor y C#, conectando con bases de datos mediante Entity Framework.\n
-Este proyecto me permitió fortalecer habilidades tanto técnicas como de trabajo colaborativo, priorización de tareas y comunicación con el cliente.`,
+      summary: "Plataforma web integral para la gestión centralizada de alquileres, reservas y administración de propiedades.",
+      points: [
+        "Participación en todo el ciclo de vida (SDLC) bajo metodología Scrum.",
+        "Arquitectura robusta implementando patrón MVC, principios SOLID e Inyección de Dependencias.",
+        "Relevamiento de requisitos reales, redacción de User Stories y documentación SRS.",
+        "Desarrollo Full Stack utilizando Blazor (Frontend) y .NET Core con Entity Framework (Backend)."
+      ],
       tech: [
-        { src: "html-5.png", alt: "HTML5" },
-        { src: "css-3.png", alt: "CSS3" },
-        { src: "net.png", alt: ".NET" },
-        { src: "database.png", alt: "SQLite" },
         { src: "c-sharp.png", alt: "C#" },
+        { src: "net.png", alt: ".NET" },
+        { src: "database.png", alt: "SQL" },
         { src: "scrum.png", alt: "Scrum" },
         { src: "git.png", alt: "Git" },
       ],
       link: "https://github.com/manupedrob2/alquilando-app",
     },
     {
-      title: "Trivia",
+      title: "Trivia Multiplayer",
       img: "trivia.png",
-      description: `Trivia es un juego de preguntas y respuestas diseñado para ofrecer una experiencia interactiva y entretenida a los usuarios.\n Permite partidas multijugador entre dos jugadores que avanzan por un tablero al responder preguntas correctamente, ganando quien alcance primero la casilla final.\n Implementé la lógica del juego, el sistema de turnos, el avance en el tablero, el servidor para conexión entre jugadores y la estructura general del flujo de partida`,
+      summary: "Juego interactivo de preguntas y respuestas en tiempo real con sistema de salas y tablero.",
+      points: [
+        "Lógica compleja de juego: gestión de turnos, estados de partida y condiciones de victoria.",
+        "Comunicación cliente-servidor para sincronización entre jugadores.",
+        "Diseño de interfaz dinámica y responsive."
+      ],
       tech: [
-        { src: "html-5.png", alt: "HTML5" },
-        { src: "css-3.png", alt: "CSS3" },
         { src: "js.png", alt: "JavaScript" },
         { src: "icons8-nodejs-240.png", alt: "Node.js" },
         { src: "express.png", alt: "Express" },
-        { src: "git.png", alt: "Git" },
+        { src: "html-5.png", alt: "HTML5" },
+        { src: "css-3.png", alt: "CSS3" },
       ],
       link: "https://trivia-3.onrender.com/",
     },
   ];
 
-  // Nuevo arreglo de datos para la sección de Educación
   const educacion = {
-    titulo: "Analista en Tecnologías de la Información y la Comunicación",
-    institucion: "Universidad Nacional de La Plata – Facultad de Informática",
-    logoSrc: "unlp-logo.png",
-    logoAlt: "UNLP",
+    titulo: "Analista TIC",
+    subtitulo: "Universidad Nacional de La Plata (UNLP)",
+    estado: "Estudiante Avanzado (Finalizando 3er año)",
+    logoSrc: "unlp-logo.png", 
     link: "https://www.info.unlp.edu.ar/analista-en-tic/",
-    estado: "Finalizando el tercer y último año",
     temasClave: [
-      "Arquitectura de software",
-      "Patrones de Diseño",
-      "Metodologías ágiles",
-      "Ingeniería de software: historias de usuario, documentación, testing, buenas prácticas",
-      "Bases de datos relacionales: SQL, modelado lógico y físico, normalización",
-      "Sistemas operativos",
-      "Programación orientada a objetos",
+      "Arquitectura de Software & Patrones de Diseño",
+      "Ingeniería de Software (Documentación, Testing, Calidad)",
+      "Bases de Datos Relacionales (Normalización, SQL Avanzado)",
+      "Programación Orientada a Objetos (POO)",
+      "Estructuras de Datos y Algoritmos",
     ],
-    reconocimiento:
-      "Becario del programa de estímulo al rendimiento académico",
+    reconocimiento: "Becario del programa de estímulo al rendimiento académico",
     historiaAcademica: {
       src: "historiaacademica.png",
-      alt: "Historia Académica",
       link: "/historiaacademica.png",
     },
   };
 
-  // --- RENDERIZADO DEL COMPONENTE ---
+  // --- RENDER ---
 
   return (
-    <section
-      id="about"
-      className="mb-2 mt-2 mx-auto flex flex-col items-center px-4 lg:px-6 gap-14 w-full max-w-6xl text-white"
-    >
-      {/* Portfolio */}
-      <div
-        id="portfolio"
-        className="w-full mt-4 flex flex-col items-center gap-6 "
-      >
-        <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-xl mb-4 mt-2">
-          Proyectos
-        </h2>
+    <section id="proyectos" className="py-16 px-4 md:px-6 w-full max-w-6xl mx-auto space-y-24">
+      
+      {/* --- SECCIÓN PROYECTOS --- */}
+      <div className="flex flex-col gap-12">
+        <div className="text-center space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#f1faee] tracking-tight">
+            Proyectos Destacados
+          </h2>
+          <p className="text-[#a8dadc] max-w-2xl mx-auto">
+            Aplicaciones desarrolladas simulando entornos reales, enfocadas en arquitectura limpia y experiencia de usuario.
+          </p>
+        </div>
 
-        {proyectos.map((project, idx) => (
-          <div
-            key={idx}
-            className="bg-white/10 backdrop-blur-lg border border-white/20 
-                 rounded-2xl shadow-lg sm:p-10 flex flex-col items-center 
-                 transition-all duration-300 hover:shadow-2xl
-                 w-full mx-auto"
-          >
-            {/* Imagen */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
+        <div className="flex flex-col gap-12">
+          {proyectos.map((project, idx) => (
+            <article
+              key={idx}
+              // Card: Hover con borde Strawberry Red (#e63946)
+              className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-[#e63946]/50 transition-all duration-300"
             >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full  max-w-xl mx-auto        /* ocupa todo el ancho */
-                  h-auto            /* mantiene proporción */
-                  object-cover      /* se ajusta sin deformarse */
-                  rounded-2xl
-                  shadow-lg
-                  transition-transform"
-              />
-            </a>
+              <div className="flex flex-col lg:flex-row">
+                
+                {/* Columna Imagen (40%) */}
+                <div className="lg:w-2/5 h-64 lg:h-auto overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1d3557]/90 via-transparent to-transparent z-10 lg:hidden"/>
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
 
-            {/* Título */}
-            <h5
-              className="mt-4 mb-4 text-2xl md:text-4xl font-bold text-center 
-                        bg-clip-text text-transparent bg-gradient-to-r 
-                        from-blue-400 via-purple-400 to-pink-400 w-full"
-            >
-              {project.title}
-            </h5>
+                {/* Columna Info (60%) */}
+                <div className="lg:w-3/5 p-8 md:p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex justify-between items-start mb-4">
+                      {/* Título: Al pasar el mouse cambia a Frosted Blue */}
+                      <h3 className="text-3xl font-bold text-[#f1faee] group-hover:text-[#a8dadc] transition-colors">
+                        {project.title}
+                      </h3>
+                      
+                      {/* Link "Ver Código": Strawberry Red */}
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#e63946] hover:text-[#d62839] transition-colors"
+                      >
+                        Ver Código
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                      </a>
+                    </div>
 
-            {/* Descripción */}
-            <p className="mb-8 text-left text-gray-200 whitespace-pre-wrap md:text-xl w-full max-w-4xl mx-auto">
-              {project.description}
-            </p>
+                    <p className="text-[#f1faee]/80 text-lg mb-6 leading-relaxed">
+                      {project.summary}
+                    </p>
 
-            {/* Tecnologías */}
-            <div
-              className="flex flex-wrap justify-center gap-5 sm:gap-8 
-                    bg-white/10 backdrop-blur-md rounded-xl p-5 w-full max-w-3xl mx-auto"
-            >
-              {project.tech.map((tech, tIdx) => (
-                <img
-                  key={tIdx}
-                  src={tech.src}
-                  alt={tech.alt}
-                  className="w-12 h-12 sm:w-14 sm:h-14 transition-transform 
-                      hover:-translate-y-1 hover:scale-110"
-                />
-              ))}
-            </div>
+                    {/* Lista de Puntos Clave */}
+                    <ul className="space-y-2 mb-8">
+                      {project.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-3 text-[#f1faee]/70 text-sm md:text-base">
+                          {/* Bullet Point: Strawberry Red */}
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#e63946] flex-shrink-0"></span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-            {/* Botón */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 px-7 py-3 text-white font-semibold 
-                    bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
-                    rounded-xl shadow-lg hover:scale-105 transition-all 
-                    focus:outline-none focus:ring-4 focus:ring-blue-500"
-            >
-              Visit Project
-              <svg
-                className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
-        ))}
+                  {/* Tech Stack y Botón Móvil */}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-[#a8dadc]/10 pt-6">
+                    <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+                      {project.tech.map((tech, tIdx) => (
+                        <div key={tIdx} className="relative group/icon">
+                          <img
+                            src={tech.src}
+                            alt={tech.alt}
+                            className="w-8 h-8 opacity-70 group-hover/icon:opacity-100 transition-opacity"
+                            title={tech.alt}
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Botón Móvil: Outline Rojo */}
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="sm:hidden w-full text-center py-3 rounded-xl bg-[#e63946]/10 text-[#e63946] font-semibold border border-[#e63946]/50 hover:bg-[#e63946] hover:text-[#f1faee] transition-all"
+                    >
+                      Ver Proyecto
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
 
-      {/* Habilidades Técnicas */}
-      <section id="habilidades" className="w-full ">
-        <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-xl mb-8">
-          Habilidades Técnicas
+      {/* --- SECCIÓN HABILIDADES --- */}
+      <div id="habilidades">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#f1faee] mb-10">
+          Stack Tecnológico
         </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {habilidades.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white/10 backdrop-blur-lg border border-white/20 p-5 rounded-3xl shadow-md hover:shadow-xl transition-all duration-1 hover:scale-[1.02]"
+              // Hover Border: Strawberry Red sutil
+              className="bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-6 hover:bg-white/10 hover:border-[#e63946]/30 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-base md:text-lg">{item.content}</p>
+              {/* Título: Frosted Blue */}
+              <h3 className="text-[#a8dadc] font-semibold text-lg mb-3">
+                {item.title}
+              </h3>
+              <p className="text-[#f1faee]/80 leading-relaxed">
+                {item.content}
+              </p>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Educación */}
-        <div className="w-full mt-12">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-xl mb-8">
-            Educación
-          </h2>
+      {/* --- SECCIÓN EDUCACIÓN --- */}
+      {/* CORREGIDO: Eliminado 'max-w-4xl' y cambiado a 'w-full' para igualar el ancho de arriba */}
+      <div id="educacion" className="w-full">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#f1faee] mb-10">
+          Formación Académica
+        </h2>
 
-          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-1">
-            <div className="relative w-full">
-              {/* LOGO arriba derecha */}
-              <img
-                src={educacion.logoSrc}
-                alt={educacion.logoAlt}
-                className="w-20 md:w-40 absolute top-0 right-0 opacity-90"
-              />
+        <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          {/* Decoración de fondo: Steel Blue (#457b9d) */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#457b9d]/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-              {/* Texto */}
-              <a
-                href={educacion.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mb-4"
-              >
-                <h3 className="text-2xl md:text-3xl font-semibold mb-2 pr-24 md:pr-40 hover:text-blue-400 transition-colors duration-300">
+          <div className="relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-6">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-[#f1faee] mb-2">
                   {educacion.titulo}
                 </h3>
-              </a>
-            </div>
-
-            <p className="text-base md:text-2xl">
-              {educacion.institucion}
-            </p>
-            <p className="text-base md:text-lg mb-4">
-              Estado: {educacion.estado}
-            </p>
-            <ul className="list-disc list-inside grid text-base md:text-lg">
-              {educacion.temasClave.map((tema, idx) => (
-                <li key={idx}>{tema}</li>
-              ))}
-            </ul>
-
-            <p className="mt-4 text-base md:text-lg font-medium">
-              Reconocimiento: {educacion.reconocimiento}
-            </p>
-
-            <div className="flex justify-center w-full">
-              <button
-                className="mt-4 py-2 px-6 rounded-xl font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-lg hover:scale-105 hover:from-pink-500 hover:to-blue-500 transition-all duration-1"
-                onClick={toggleVisibility}
-              >
-                {isVisible
-                  ? "Ocultar historia académica"
-                  : "📄 Ver historia académica"}
-              </button>
-            </div>
-
-            {isVisible && (
-              <div className="flex justify-center w-full mt-6">
-                <a
-                  href={educacion.historiaAcademica.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <img
-                    src={educacion.historiaAcademica.src}
-                    alt={educacion.historiaAcademica.alt}
-                    className="w-full max-w-md rounded-2xl shadow-2xl border border-gray-600 cursor-pointer transition-transform "
-                  />
-                </a>
+                {/* Subtítulo: Frosted Blue */}
+                <p className="text-xl text-[#a8dadc] font-medium">
+                  {educacion.subtitulo}
+                </p>
+                <p className="text-[#f1faee]/60 mt-2 flex items-center gap-2">
+                  {/* Punto: Strawberry Red */}
+                  <span className="w-2 h-2 rounded-full bg-[#e63946] animate-pulse"></span>
+                  {educacion.estado}
+                </p>
               </div>
-            )}
+              
+              <img
+                src={educacion.logoSrc}
+                alt="UNLP"
+                className="w-16 h-auto opacity-80"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-[#f1faee] font-semibold mb-3">Conceptos Clave Adquiridos:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {educacion.temasClave.map((tema, idx) => (
+                    <span key={idx} className="px-3 py-1 rounded-lg bg-white/10 text-[#f1faee]/80 text-sm border border-white/5">
+                      {tema}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Caja Reconocimiento: Steel Blue sutil */}
+              <div className="p-4 rounded-xl bg-[#457b9d]/20 border border-[#457b9d]/30">
+                <p className="text-[#f1faee] text-sm font-medium text-center">
+                  🏆 {educacion.reconocimiento}
+                </p>
+              </div>
+
+              {/* Botón Toggle Historia */}
+              <div className="flex flex-col items-center gap-6 mt-8">
+                <button
+                  onClick={toggleVisibility}
+                  className="px-6 py-2.5 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/20 text-[#f1faee] transition-colors border border-white/10 flex items-center gap-2"
+                >
+                  {isVisible ? "Ocultar Historia" : "Ver Historia Académica"}
+                  <svg className={`w-4 h-4 transition-transform ${isVisible ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+
+                {/* Imagen Historia Académica */}
+                <div className={`w-full overflow-hidden transition-all duration-500 ease-in-out ${isVisible ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <a href={educacion.historiaAcademica.link} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={educacion.historiaAcademica.src}
+                      alt="Historia Académica"
+                      className="w-full rounded-xl border border-white/20 shadow-2xl hover:opacity-90 transition-opacity"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+
     </section>
   );
 }
