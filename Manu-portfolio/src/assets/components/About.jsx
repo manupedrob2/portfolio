@@ -20,7 +20,7 @@ export default function About() {
     },
   ];
 
-  const proyectos = [
+ const proyectos = [
     {
       title: "Alquilando",
       img: "imagenAlquilando.jpg",
@@ -58,6 +58,26 @@ export default function About() {
       ],
       link: "https://trivia-3.onrender.com/",
     },
+    {
+      title: "Comfy Chair",
+      img: "comfy.png",
+      summary: "ComfyChair es una plataforma de software diseñada para la gestión integral de conferencias científicas. Su objetivo principal es centralizar y facilitar todo el flujo de trabajo de un evento académico, conectando a los distintos roles participantes (organizadores, revisores y autores).",
+      points: [
+        "Desarrollo Frontend SPA moderno y tipado utilizando React, TypeScript y TanStack Router.",
+        "Implementación de flujo de diseño UX/UI iterativo: validación en papel, prototipado High-Fidelity en Figma y maquetado con Shadcn/ui.",
+        "Arquitectura desacoplada consumiendo una API RESTful (Django) para la gestión asíncrona de datos y archivos.",
+        "Diseño Responsive y Accesible con Tailwind CSS, optimizando la experiencia de usuario en formularios complejos y dashboards."
+      ],
+      tech: [
+        { src: "react.png", alt: "React" },
+        { src: "typescript.png", alt: "TypeScript" },
+        { src: "tailwind.png", alt: "Tailwind CSS" },
+        { src: "figma.png", alt: "Figma" },
+        { src: "python.png", alt: "Django REST" },
+      ],
+      // Agrega link si tienes el repo o el deploy, sino puedes omitirlo o dejarlo vacío
+      link: "https://github.com/tu-usuario/comfy-chair", 
+    }
   ];
 
   const educacion = {
