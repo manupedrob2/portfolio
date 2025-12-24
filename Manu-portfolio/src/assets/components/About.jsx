@@ -60,7 +60,7 @@ export default function About() {
     },
     {
       title: "Comfy Chair",
-      img: "comfy.png",
+      img: "comfy-chair.png",
       summary: "ComfyChair es una plataforma de software diseñada para la gestión integral de conferencias científicas. Su objetivo principal es centralizar y facilitar todo el flujo de trabajo de un evento académico, conectando a los distintos roles participantes (organizadores, revisores y autores).",
       points: [
         "Desarrollo Frontend SPA moderno y tipado utilizando React, TypeScript y TanStack Router.",
@@ -73,7 +73,6 @@ export default function About() {
         { src: "typescript.png", alt: "TypeScript" },
         { src: "tailwind.png", alt: "Tailwind CSS" },
         { src: "figma.png", alt: "Figma" },
-        { src: "python.png", alt: "Django REST" },
       ],
       // Agrega link si tienes el repo o el deploy, sino puedes omitirlo o dejarlo vacío
       link: "https://github.com/tu-usuario/comfy-chair", 
